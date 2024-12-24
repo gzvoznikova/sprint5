@@ -7,9 +7,9 @@ from conftest import driver
 class TestRegistration:
     # Регистрация аккаунта пользователя с валидными значениями
     def test_reg_new_account_success(self, driver):
-        username = 'lina11111'
-        email = 'lina11111@ya.ru'
-        password = 'pass10111111'
+        username = 'lina111111'
+        email = 'lina111111@ya.ru'
+        password = 'pass101111111'
         driver.find_element(*TestLocators.button_login_in_main).click()
         driver.find_element(*TestLocators.button_register).click()
         driver.find_element(*TestLocators.input_name).send_keys(username)
