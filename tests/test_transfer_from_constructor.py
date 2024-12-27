@@ -2,11 +2,14 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import WebDriverWait
 from locators import TestLocators
 from conftest import driver
+from urls import DataUrls
 
 
 class TestNavigateToPersonalAccount:
     # Проверка перехода из конструктора бургеров в личный кабинет
     def test_transfer_from_constructor_to_lk(self, driver):
+        driver.get(DataUrls.URL)
+
         email = 'gzvoznikova@ya.ru'
         password = 'qwerty123'
         driver.find_element(*TestLocators.button_lk).click()

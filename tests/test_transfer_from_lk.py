@@ -2,36 +2,26 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import WebDriverWait
 from locators import TestLocators
 from conftest import driver
+from urls import DataUrls
 
 
 class TestNavigateToConstructor:
     # Проверка перехода по клику на Конструктор
     def test_transfer_from_lk_to_constructor_by_header(self, driver):
-        email = 'gzvoznikova@ya.ru'
-        password = 'qwerty123'
+        driver.get(DataUrls.URL)
+
         driver.find_element(*TestLocators.button_lk).click()
-        driver.find_element(*TestLocators.input_email_auth).send_keys(email)
-        driver.find_element(*TestLocators.input_password_auth).send_keys(password)
-        driver.find_element(*TestLocators.button_login).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(TestLocators.button_make_the_order))
-        driver.find_element(*TestLocators.button_lk).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(TestLocators.profile))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(TestLocators.input_email_auth))
         driver.find_element(*TestLocators.header_of_page_constructor).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(TestLocators.button_make_the_order))
-        assert driver.find_element(*TestLocators.button_make_the_order).is_displayed()
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(TestLocators.button_login_in_main))
+        assert driver.find_element(*TestLocators.button_login_in_main).is_displayed()
 
     # Проверка перехода по клику на логотип
     def test_transfer_from_lk_to_constructor_by_logo(self, driver):
-        email = 'gzvoznikova@ya.ru'
-        password = 'qwerty123'
+        driver.get(DataUrls.URL)
+
         driver.find_element(*TestLocators.button_lk).click()
-        driver.find_element(*TestLocators.input_email_auth).send_keys(email)
-        driver.find_element(*TestLocators.input_password_auth).send_keys(password)
-        driver.find_element(*TestLocators.button_login).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(TestLocators.button_make_the_order))
-        driver.find_element(*TestLocators.button_lk).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(TestLocators.profile))
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(TestLocators.input_email_auth))
         driver.find_element(*TestLocators.logo).click()
-        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(
-            TestLocators.button_make_the_order))
-        assert driver.find_element(*TestLocators.button_make_the_order).is_displayed()
+        WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located(TestLocators.button_login_in_main))
+        assert driver.find_element(*TestLocators.button_login_in_main).is_displayed()

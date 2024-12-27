@@ -49,7 +49,7 @@ class TestLocators:
     order_history = By.XPATH, '//a[@href = "/account/order-history"]'
 
     # Кнопка "Выйти", логаут
-    button_logout = By.XPATH, '//button[@type = "button"]'
+    button_logout = By.XPATH, "//li[@class='Account_listItem__35dAP']//button[contains(@class, 'Account_button__14Yp3') and text()='Выход']"
 
     # Главная
     # Кнопка "Войти в аккаунт" на главной
@@ -62,19 +62,19 @@ class TestLocators:
     button_make_the_order = By.XPATH, '//button[text()="Оформить заказ"]'
 
     # Кнопка "Конструктор" в шапке сайта
-    header_of_page_constructor = By.XPATH, '//p[text() = "Конструктор"]'
+    header_of_page_constructor = By.XPATH, "//p[@class='AppHeader_header__linkText__3q_va ml-2' and text()='Конструктор']"
 
     # Селектор, помечающий выбранный раздел конструктора как активный
-    selected_button = By.XPATH, ('//div[@class = "tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect"]')
+    selected_button = By.XPATH, '//div[@class = "tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect"]'
 
     # Заголовок раздела "Булки" в меню конструктора
-    bread_block = By.XPATH, '/html/body/div/div/main/section[1]/div[1]/div[1]/span[text() = "Булки"]'
+    bread_block = By.XPATH, '//span[text() = "Булки"]'
 
     # Заголовок раздела "Соусы" в меню конструктора
-    sause_block = By.XPATH, '/html/body/div/div/main/section[1]/div[1]/div[2]/span[text() = "Соусы"]'
+    sause_block = By.XPATH, '//span[text() = "Соусы"]'
 
     # Заголовок раздела "Начинки" в меню конструктора
-    topping_block = By.XPATH, '/html/body/div/div/main/section[1]/div[1]/div[3]/span[text() = "Начинки"]'
+    topping_block = By.XPATH, '//span[text() = "Начинки"]'
 
     # Кликабельный логотип в шапке сайта
-    logo = By.XPATH, '/html/body/div/div/header/nav/div[@class="AppHeader_header__logo__2D0X2"]'
+    logo = By.CSS_SELECTOR, "div.AppHeader_header__logo__2D0X2 a[href='/']"
